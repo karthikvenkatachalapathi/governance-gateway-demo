@@ -1,35 +1,19 @@
-# Governance Gateway Demo
+# Google Workspace Governance Gateway Demo
 
-Static, sanitized demo for the Google Workspace Governance Gateway control plane.
+Static Cloudflare Pages demo of the Google Workspace Governance Control UI.
 
-This repository is intended for Cloudflare Pages.
+Important: this demo copies the production Control UI HTML/CSS/JavaScript from `google_governance_control_plane.py`; only the API responses are mocked in-browser. The layout, navigation, tabs, settings rail, tables, modals, and responsive behavior should match the real control plane.
 
 ## Cloudflare Pages
 
-| Setting | Value |
-|---|---|
-| Framework preset | None / Static HTML |
-| Build command | leave blank |
-| Build output directory | `/` |
+- Framework preset: `None` / static HTML
+- Build command: leave blank
+- Build output directory: `/`
 
-One-off deploy:
+## Local preview
 
 ```bash
-npx wrangler pages deploy . --project-name governance-gateway-demo
+python3 -m http.server 8787
 ```
 
-## Safety
-
-The demo uses mock data only:
-
-- no Google API calls
-- no OAuth flow
-- no tokens
-- no backend dependency
-- no real accounts
-
-## Regenerate screenshots
-
-```bash
-python3 scripts/generate_demo_screenshots.py
-```
+Then open `http://127.0.0.1:8787/`.
